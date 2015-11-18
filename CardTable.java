@@ -42,18 +42,11 @@ class CardTable extends JPanel {
 
 		for (int i=0; i<4; i++){
 			freeCells.add(i, null);
-			// System.out.println(freeCells.get(i));
-			// System.out.println(freeCells.size());
-			// System.out.println(Arrays.asList(freeCells.toArray()));
 		}
 		this.setLayout(null);
 		this.addMouseListener(mouseAdapter);
 		this.addMouseMotionListener(mouseAdapter);
 	}
-
-	// public ArrayList<CardImagePanel> getCards(){
-	// 	return cards;
-	// }
 
 	private int getColumn(Point p){
 		int xPos = (int)p.getX();
@@ -279,7 +272,6 @@ class CardTable extends JPanel {
 								}
 							});
 						} else if (isTopOfTableau(clickedCard)){
-							// System.out.println("Picking up tableau");
 							// need to handle this scenario and animate the whole tableau
 							List<CardImagePanel> cascade = cascades.get(getColumn(mousePressPosition));
 							int index = cascade.indexOf(card);
@@ -334,7 +326,7 @@ class CardTable extends JPanel {
 			List<CardImagePanel> cascade = cascades.get(srccolumn);
 			int tableauSize = cascade.size() - cascade.indexOf(hmap.get(clickedCard));
 
-			// How many empty cascades are there?
+			// Count empty cascades
 			int emptyCascades = 0;
 			for (int i=0; i < cascades.size(); i++) {
 				if (cascades.get(i).size() == 0)
@@ -345,7 +337,7 @@ class CardTable extends JPanel {
 			if (tableauSize > emptyCascades + getEmptyFreeCells() + 1)
 				return false;
 
-			// Can we stack on bottom card in dstcolumn?
+			// Check if can stack on bottom card in dstcolumn
 			List<CardImagePanel> destCascade = cascades.get(dstcolumn);
 			if (destCascade.size() == 0) {
 				return true;
@@ -719,9 +711,6 @@ class CardTable extends JPanel {
 		freeCells.clear();
 		for (int i=0; i<4; i++){
 			freeCells.add(i, null);
-			// System.out.println(freeCells.get(i));
-			// System.out.println(freeCells.size());
-			// System.out.println(Arrays.asList(freeCells.toArray()));
 		}
 		System.out.println("Freecells size: " + freeCells.size());
 		System.out.println("Freecells array: " + Arrays.asList(freeCells.toArray()));

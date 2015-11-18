@@ -12,7 +12,6 @@ class CardImagePanel extends JPanel {
 	private BufferedImage img;
 	private SuitAndFace suitAndFace;
 
-	// Constructor	
 	public CardImagePanel(){
 	}
 
@@ -63,28 +62,10 @@ class CardImagePanel extends JPanel {
 			return new Dimension(20,20);
 
 		} else {
-			// return new Dimension(img.getWidth()/4, img.getHeight()/4);
-			// return new Dimension(125,182);
 			return new Dimension(100,147);
+
 		}
 	}
-
-	// protected MouseAdapter mouseAdapter = new MouseAdapter(){
-	// 	public void mousePressed( MouseEvent e){
-	// 		mousePressPosition = e.getPoint();
-	// 		revalidate();
-	// 		repaint();
-	// 	}
-	// 	public void mouseDragged(MouseEvent e){
-	// 		Point p = e.getPoint();
-	// 		int xdiff = (int)(p.getX() - mousePressPosition.getX());
-	// 		int ydiff = (int)(p.getY() - mousePressPosition.getY());
-	// 		setLocation( (int)(getLocation().getX() + xdiff), (int)(getLocation().getY() + ydiff) );
-	// 		revalidate();
-	// 		repaint();
-	// 	}
-	// };
-
 	
 
 	private static void build() {

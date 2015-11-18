@@ -51,7 +51,7 @@ public class SuitAndFace {
 		}
 	}
 
-	// Required if using this class as a key in a HashMap
+	// Required method if using this class as a key in a HashMap
 	@Override
 	public int hashCode(){
 
